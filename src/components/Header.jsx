@@ -15,6 +15,7 @@ export default function Header() {
           <div className="flex gap-2 ">
             <Tooltip title="Community Page" placement="bottomRight">
               <a
+                className="transition-all hover:scale-125"
                 href="https://gdg.community.dev/gdg-on-campus-mahatma-gandhi-missions-college-of-engineering-and-technology-noida-india/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -24,6 +25,7 @@ export default function Header() {
             </Tooltip>
             <Tooltip title="Whatsapp">
               <a
+                className="transition-all hover:scale-125"
                 href="https://chat.whatsapp.com/Fv8DFFkNiySFFkTynK1ifo"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,6 +35,7 @@ export default function Header() {
             </Tooltip>
             <Tooltip title="Instagram">
               <a
+                className="transition-all hover:scale-125"
                 href="https://www.instagram.com/gdg_mgmcoet"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -42,6 +45,7 @@ export default function Header() {
             </Tooltip>
             <Tooltip title="LinkedIn" placement="bottomLeft">
               <a
+                className="transition-all hover:scale-125"
                 href="https://www.linkedin.com/company/gdg-mgmcoet"
                 target="_blank"
                 rel="noopener noreferrer"
