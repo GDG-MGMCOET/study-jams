@@ -13,10 +13,10 @@ export default {
         green: "#34a853",
         yellow: "#f9ab00",
         red: "#ea4335",
+        gray: "#d9d9d9",
         bg: "#fef9f9",
       },
     },
   },
   plugins: [],
 };
-
