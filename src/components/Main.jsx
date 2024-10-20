@@ -1,5 +1,6 @@
 import { ConfigProvider, Input, Table } from "antd";
 const { Search } = Input;
+import { useState, useEffect } from "react";
 
 function TableTags({ value }) {
   let bgColor = "bg-yellow",
@@ -22,7 +23,13 @@ function TableTags({ value }) {
   );
 }
 
-export default function Main({ data }) {
+export default function Main({ data, loading }) {
+  const [leaderBoardData, setLeaderBoardData] = useState(data);
+
+  useEffect(() => {
+    setLeaderBoardData(data);
+  }, [data]);
+
   const columns = [
     {
       title: "Rank",
@@ -97,7 +104,19 @@ export default function Main({ data }) {
             },
           }}
         >
-          <Search placeholder="Search" enterButton onSearch={null} />
+          <Search
+            placeholder="Search"
+            enterButton
+            onChange={(e) => {
+              const { value } = e.target;
+              const filteredData = data.filter((participant) => {
+                return participant.name
+                  .toLowerCase()
+                  .includes(value.toLowerCase());
+              });
+              setLeaderBoardData(filteredData);
+            }}
+          />
         </ConfigProvider>
       </div>
       <div className="container mx-auto mb-10">
@@ -120,10 +139,11 @@ export default function Main({ data }) {
         >
           <Table
             columns={columns}
-            dataSource={data}
+            dataSource={leaderBoardData}
             bordered
             pagination={false}
             className="shadow-xl rounded-3xl"
+            loading={loading}
           />
         </ConfigProvider>
       </div>

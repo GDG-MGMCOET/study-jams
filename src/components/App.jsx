@@ -23,7 +23,19 @@ export default function App() {
     participantsProgress: [],
   });
 
-  console.log(leaderBoardData);
+  let formattedData = leaderBoardData.participantsProgress.map(
+    (participant) => {
+      return {
+        key: participant._id,
+        name: participant.name,
+        email: participant.email,
+        accessCodeRedeemed: participant.accessCodeRedeemed,
+        allBadgesCompleted: participant.allBadgesCompleted,
+        noOfBadges: participant.noOfBadges,
+        arcadeGame: participant.arcadeGame,
+      };
+    }
+  );
 
   useEffect(() => {
     getLeaderBoardData({ setLeaderBoardData, showMessage, setLoading });
@@ -34,7 +46,7 @@ export default function App() {
       {contextHolder}
       <Header lastUpdated={leaderBoardData.lastUpdated} />
       <Hero data={leaderBoardData.participantsProgress} />
-      <Main data={leaderBoardData.participantsProgress} />
+      <Main data={formattedData} loading={loading} />
       <Footer />
       <UploadAndParseCsv />
     </div>
