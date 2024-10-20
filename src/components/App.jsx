@@ -32,9 +32,9 @@ export default function App() {
   return (
     <div className="h-full font-body bg-bg">
       {contextHolder}
-      <Header />
-      <Hero />
-      <Main />
+      <Header lastUpdated={leaderBoardData.lastUpdated} />
+      <Hero data={leaderBoardData.participantsProgress} />
+      <Main data={leaderBoardData.participantsProgress} />
       <Footer />
       <UploadAndParseCsv />
     </div>

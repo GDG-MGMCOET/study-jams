@@ -2,10 +2,10 @@ import Icon from "@mdi/react";
 import { mdiWhatsapp, mdiInstagram, mdiLinkedin } from "@mdi/js";
 import { Tooltip } from "antd";
 
-export default function Header() {
+export default function Header({ lastUpdated }) {
   return (
     <>
-      <header className="bg-white ">
+      <header className="bg-white shadow-xl">
         <div className="container flex items-center justify-between p-5 mx-auto">
           <img
             src="./Logo light.png"
@@ -59,7 +59,7 @@ export default function Header() {
           <div className="container flex justify-around py-2 mx-auto">
             <p>Gen AI Study Jams & Arcade is Live !!</p>
             <p>
-              Last Update : <span>16 July'24</span> 10:00
+              Last Updated : <span>{lastUpdated}</span>
             </p>
           </div>
         </div>

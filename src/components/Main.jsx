@@ -22,7 +22,7 @@ function TableTags({ value }) {
   );
 }
 
-export default function Main() {
+export default function Main({ data }) {
   const columns = [
     {
       title: "Rank",
@@ -37,13 +37,13 @@ export default function Main() {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      width: "20%",
+      width: "17.5%",
     },
     {
       title: "Email",
       dataIndex: "email",
       key: "email",
-      width: "20%",
+      width: "17.5%",
     },
     {
       title: "Access Code Redemption",
@@ -70,7 +70,7 @@ export default function Main() {
       dataIndex: "noOfBadges",
       key: "noOfBadges",
       align: "center",
-      width: "10%",
+      width: "15%",
     },
     {
       title: "No. of Arcade Games Completed",
@@ -84,48 +84,9 @@ export default function Main() {
     },
   ];
 
-  const dataSource = [
-    {
-      key: "1",
-      name: "Hriday Budhiraja",
-      email: "hriday2602@gmail.com",
-      accessCodeRedeemed: true,
-      allBadgesCompleted: true,
-      noOfBadges: 15,
-      arcadeGame: 2,
-    },
-    {
-      key: "2",
-      name: "Jeetu Gupta",
-      email: "jeetugupta007@gmail.com",
-      accessCodeRedeemed: false,
-      allBadgesCompleted: false,
-      noOfBadges: 9,
-      arcadeGame: 1,
-    },
-    {
-      key: "3",
-      name: "Hriday Budhiraja",
-      email: "hriday2602@gmail.com",
-      accessCodeRedeemed: true,
-      allBadgesCompleted: true,
-      noOfBadges: 15,
-      arcadeGame: 2,
-    },
-    {
-      key: "4",
-      name: "Jeetu Gupta",
-      email: "jeetugupta007@gmail.com",
-      accessCodeRedeemed: true,
-      allBadgesCompleted: false,
-      noOfBadges: 9,
-      arcadeGame: 1,
-    },
-  ];
-
   return (
     <main className="">
-      <div className="container mx-auto py-7 px-96">
+      <div className="container py-10 mx-auto px-96 drop-shadow-xl">
         <ConfigProvider
           theme={{
             token: {
@@ -139,7 +100,7 @@ export default function Main() {
           <Search placeholder="Search" enterButton onSearch={null} />
         </ConfigProvider>
       </div>
-      <div className="container mx-auto mb-7">
+      <div className="container mx-auto mb-10">
         <ConfigProvider
           theme={{
             token: {
@@ -159,7 +120,7 @@ export default function Main() {
         >
           <Table
             columns={columns}
-            dataSource={dataSource}
+            dataSource={data}
             bordered
             pagination={false}
             className="shadow-xl rounded-3xl"
