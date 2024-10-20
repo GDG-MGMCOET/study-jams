@@ -23,13 +23,13 @@ export default function UploadAndParseCsv() {
   };
 
   return (
-    <section className="h-screen w-screen flex justify-center items-center">
+    <section className="flex items-center justify-center h-screen bg-zinc-900 ">
       {contextHolder}
-      <div className="w-2/5 h-2/5 flex flex-col justify-around">
+      <div className="flex flex-col justify-between p-10 bg-white h-2/5 rounded-3xl">
         <div className="flex flex-col">
           <Input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter your Email"
             onChange={(e) => {
               const { value } = e.target;
               if (emailError.length > 0) setEmailError("");
@@ -40,6 +40,7 @@ export default function UploadAndParseCsv() {
                 setEmailError("Please enter a valid email");
               }
             }}
+            className="border-2 border-black"
           />
           {emailError.length > 0 && (
             <p className="text-sm text-red">{emailError}</p>
@@ -47,7 +48,7 @@ export default function UploadAndParseCsv() {
         </div>
         <div className="flex flex-col">
           <Input.Password
-            placeholder="input password"
+            placeholder="Enter the Password"
             iconRender={(visible) =>
               visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
             }
@@ -56,6 +57,7 @@ export default function UploadAndParseCsv() {
               if (passwordError.length > 0) setPasswordError("");
               setCredentials((prev) => ({ ...prev, password: value }));
             }}
+            className="border-2 border-black"
           />
           {passwordError.length > 0 && (
             <p className="text-sm text-red">{passwordError}</p>
@@ -141,6 +143,7 @@ export default function UploadAndParseCsv() {
               });
             }
           }}
+          className="font-bold border-2 border-black"
         >
           Submit
         </Button>
