@@ -59,4 +59,46 @@ const canMakeApiCall = ({
   return true;
 };
 
-export { updateParticipantsProgress, checkEmail, canMakeApiCall };
+const formatDate = (timestamp) => {
+  const date = new Date(timestamp);
+
+  const options = {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+
+  const formattedTime = date.toLocaleString("en-IN", options).replace(",", "");
+  return formattedTime;
+};
+
+const getLeaderBoardData = async ({
+  setLeaderBoardData,
+  showMessage,
+  setLoading,
+}) => {
+  const res = await leaderBoardService.getLeaderBoardData();
+  if (res?.success) {
+    setLeaderBoardData({
+      lastUpdated: formatDate(res.data.lastUpdated),
+      participantsProgress: res.data.participants,
+    });
+  } else {
+    showMessage({
+      type: "error",
+      content: res ? res.message : "Error fetching LeaderBoard Data",
+    });
+  }
+  setLoading(false);
+  return res;
+};
+
+export {
+  updateParticipantsProgress,
+  checkEmail,
+  canMakeApiCall,
+  getLeaderBoardData,
+};
