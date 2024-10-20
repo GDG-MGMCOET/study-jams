@@ -1,7 +1,7 @@
 export const leaderBoardService = {
   updateParticipantsProgress: async (data, email, password) => {
     const res = await fetch(
-      "http://localhost:3000/admin/update-participants-status",
+      "https://study-jams-backend.vercel.app/admin/update-participants-status",
       {
         method: "POST",
         headers: {
@@ -14,7 +14,9 @@ export const leaderBoardService = {
     return responseData;
   },
   getLeaderBoardData: async () => {
-    const res = await fetch("http://localhost:3000/participants");
+    const res = await fetch(
+      "https://study-jams-backend.vercel.app/participants"
+    );
     const responseData = await res.json();
     return responseData;
   },
