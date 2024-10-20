@@ -13,4 +13,9 @@ export const leaderBoardService = {
     const responseData = await res.json();
     return responseData;
   },
+  getLeaderBoardData: async () => {
+    const res = await fetch("http://localhost:3000/participants");
+    const responseData = await res.json();
+    return responseData;
+  },
 };
