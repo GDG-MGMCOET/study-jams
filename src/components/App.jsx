@@ -36,7 +36,6 @@ export default function App() {
       <Hero data={leaderBoardData.participantsProgress} />
       <Main data={leaderBoardData.participantsProgress} />
       <Footer />
-      <UploadAndParseCsv />
     </div>
   );
 }
