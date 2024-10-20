@@ -6,7 +6,7 @@ export default function Header({ lastUpdated }) {
   return (
     <>
       <header className="bg-white shadow-xl">
-        <div className="container flex items-center justify-between p-5 mx-auto">
+        <div className="container flex items-center justify-between p-5 mx-auto max-md:flex-col max-md:gap-5">
           <img
             src="./Logo light.png"
             alt="GDG MGM COET Logo"
@@ -56,7 +56,7 @@ export default function Header({ lastUpdated }) {
           </div>
         </div>
         <div className="text-white bg-blue">
-          <div className="container flex justify-around py-2 mx-auto">
+          <div className="container flex items-center justify-around py-2 mx-auto max-md:flex-col max-md:gap-5">
             <p>Gen AI Study Jams & Arcade is Live !!</p>
             <p>
               Last Updated : <span>{lastUpdated}</span>
