@@ -1,7 +1,7 @@
 function HeroCards({ data, desc }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 px-10 py-5 text-center transition-all bg-white shadow-xl rounded-3xl w-80 hover:scale-110 hover:shadow-zinc-500">
-      <h2 className="text-5xl font-black">{data}</h2>
+    <div className="flex flex-col items-center justify-center gap-5 px-10 py-5 text-center transition-all bg-white shadow-xl select-none rounded-3xl w-80 md:hover:scale-110 md:hover:shadow-zinc-500 lg:max-xl:w-64 md:max-lg:w-44 md:max-lg:p-5">
+      <h2 className="text-5xl font-black max-sm:text-4xl">{data}</h2>
       <p className="">{desc}</p>
     </div>
   );
@@ -19,7 +19,7 @@ export default function Hero({ data }) {
 
   return (
     <section>
-      <div className="container flex justify-between px-20 mx-auto py-14">
+      <div className="container flex items-center justify-between px-20 mx-auto py-14 max-md:flex-col max-md:gap-5 ">
         <HeroCards
           data={countOfParticipants}
           desc="No. of participants enrolled"
@@ -34,7 +34,7 @@ export default function Hero({ data }) {
         />
       </div>
       <div className="select-none bg-gray shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-        <div className="container flex justify-center gap-5 mx-auto text-6xl p-7 drop-shadow-md">
+        <div className="container flex justify-center gap-5 mx-auto text-6xl p-7 drop-shadow-md md:max-lg:text-4xl max-md:text-3xl max-sm:text-lg">
           <h1 className="text-blue">GEN AI</h1>
           <h1 className="text-red">&</h1>
           <h1 className="text-yellow">ARCADE</h1>
