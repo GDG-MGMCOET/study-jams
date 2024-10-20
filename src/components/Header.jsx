@@ -10,9 +10,9 @@ export default function Header() {
           <img
             src="./Logo light.png"
             alt="GDG MGM COET Logo"
-            className="h-14"
+            className="h-14 drop-shadow-md"
           />
-          <div className="flex gap-2 ">
+          <div className="flex gap-2 drop-shadow-md ">
             <Tooltip title="Community Page" placement="bottomRight">
               <a
                 className="transition-all hover:scale-125"
