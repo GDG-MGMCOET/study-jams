@@ -2,7 +2,6 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Main from "./Main";
 import Footer from "./Footer";
-import UploadAndParseCsv from "./uploadAndParseCSV";
 import { useState, useEffect } from "react";
 import { getLeaderBoardData } from "../utils";
 import { message } from "antd";
